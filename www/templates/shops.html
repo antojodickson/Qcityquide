@@ -1,0 +1,34 @@
+<ion-view view-title="{{vm.category.name}}" cache-view="false">
+  <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios-search-strong" ng-click="vm.showFilterBar()"></button>
+        <button class="button button-icon button-clear ion-location" ng-click="vm.gotoNearby()"></button>
+    </ion-nav-buttons>
+   <ion-content>
+
+    <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="vm.getItems(true)">
+    </ion-refresher>
+
+    <div class="shop-item" ng-repeat="(K,item) in vm.items | orderBy:['title']">
+      <div class="row">
+        <div class="col col-75 positive">{{item.title}}</div>
+        <div class="col pull-right" ng-class="{'assertive': item.status == 'Closed', 'balanced': item.status == 'Open'}">{{item.status}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{item.types.toString()}}</div>
+      </div>
+      <div class="row footer-row">
+        <div class="col">
+          <span>{{item.address}}</span><br>
+          <span><i class="icon ion-ios-telephone dark"></i> {{item.mobile}}</span>
+        </div>
+        <div class="col"><button class="button button-small button-positive pull-right" ng-click="vm.getdirection(item)">GET DIRECTION</button></div>
+      </div>
+    </div>
+    <div ng-if="vm.items !== undefined && !vm.items.length" class="no-results list">
+       <a class="item" href="#">
+          <p>No {{vm.category.name}} found</p>
+       </a>
+    </div>
+
+  </ion-content>
+</ion-view>

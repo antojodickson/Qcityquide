@@ -1,0 +1,77 @@
+<ion-view title="Register">
+	<ion-content>
+    <form name="register_form" ng-submit="registerUser()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <span class="input-label positive">Company Name</span>
+          <input placeholder="Company Name" type="text" ng-model="register.store_name" required>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label positive">
+            <div class="input-label positive">Category</div>
+          </div>
+          <select ng-model="register.category">
+            <option ng-repeat="cate in categories" ng-value="cate.row_id">{{cate.name}}</option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Description</span>
+          <input type="text" placeholder="Description" ng-model="register.description">
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Email</span>
+          <input placeholder="Email" type="text" ng-model="register.store_email" required>
+        </label>
+				<label class="item item-input">
+					<span class="input-label positive">GSM</span>
+					<input placeholder="GSM" type="text" ng-model="register.gsm">
+				</label>
+				<label class="item item-input">
+					<span class="input-label positive">Capcha </span>
+					<span>{{register.f}} + {{register.s}} = &nbsp;</span>
+					<input placeholder="answer" type="text" ng-model="register.ct_captcha" required>
+				</label>
+        <!-- <label class="item item-input">
+          <span class="input-label positive">Username</span>
+          <input placeholder="Username" type="text" ng-model="register.username" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Password</span>
+          <input placeholder="Password" type="password" ng-model="register.rpassword" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Confirm Password</span>
+          <input placeholder="Confirm Password" type="password" ng-model="register.ccpassword" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Address</span>
+          <input placeholder="Address" type="text" ng-model="register.location">
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Area</span>
+          <input placeholder="Area" type="text" ng-model="register.area">
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Building</span>
+          <input placeholder="Building" type="text" ng-model="register.building">
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Floor</span>
+          <input placeholder="Floor" type="text" ng-model="register.floor">
+        </label> -->
+        <!-- <label class="item item-input">
+          <span class="input-label positive">Telephone</span>
+          <input placeholder="Telephone" type="text" ng-model="register.tele" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label positive">Fax</span>
+          <input placeholder="Fax" type="text" ng-model="register.fax">
+        </label> -->
+        <div class="item agreement">
+          By signing up, it means that you have agreed to our Privacy Policy and Agreement.
+        </div>
+        <button class="button button-block button-positive">Register</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

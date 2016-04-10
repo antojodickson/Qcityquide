@@ -1,0 +1,25 @@
+<ion-view cache-view="false" title="{{title}}">
+  <ion-nav-buttons side="secondary">
+    <!-- button class="button button-icon icon ion-refresh" ng-click="getDirection(type, true)" -->
+    <button ng-class="{'positive': showDirection}" class="button button-icon icon ion-android-compass" ng-click="getDetails(true)">
+    </button>
+  </ion-nav-buttons>
+  <ion-content has-header="true">
+  <p id="directions" ng-show="showDirection">
+  </p>
+  <map on-create="mapCreated(map)" ng-hide="showDirection"></map>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-light direction-footer">
+  <div class="row">
+    <div class="col">
+      <button class="button col icon-left ion-location button-block button-positive p-sm" ng-click="gotoGoogleMap()">GET DIRECTION</button>
+    </div>
+    <div class="col">
+      <a class="button col icon-left ion-ios-telephone button-block button-royal p-sm" ng-href="tel:{{shop.mobile}}">CALL US</a>
+    </div>
+    <div class="col">
+      <button class="button col icon-left ion-android-share-alt button-block button-balanced p-sm" ng-click="getDetails(false)">SHARE</button>
+    </div>
+  </div>
+</ion-footer-bar>
+  </ion-view>

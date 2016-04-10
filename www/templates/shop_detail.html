@@ -1,0 +1,27 @@
+<ion-modal-view>
+    <ion-content class="header-background">
+        <ion-header-bar align-title="center">
+            <h1 class="title">{{shopItem.title}}</h1>
+            <button class="button button-clear button-icon icon ion-android-close" ng-click="closeModal()"></button>
+        </ion-header-bar>
+
+        <form>
+            <div class="shop-header">
+                <img class="full-image" ng-src="shopItem.image" fallback-src="{{category.img}}">
+                <h2 class="shop-name">{{shopItem.types.toString()}}</h2>
+                <div class="shop-price" ng-class="{'assertive': shopItem.status == 'Closed', 'balanced': shopItem.status == 'Open'}">{{shopItem.status}}  <span class="pull-right">{{shopItem.distance}} km</span></div>
+               
+            </div>
+            <div class="shop-body">
+                <div class="shop-buttons row">
+                    <button class="button button-assertive ion-map col" ng-click="getdirection(shopItem.title)">
+                        Get Direction
+                    </button>
+                    <button class="button button-positive ion-android-call col">
+                        Call Us
+                    </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

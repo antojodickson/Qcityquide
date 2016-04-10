@@ -1,0 +1,18 @@
+<ion-modal-view>
+<ion-header-bar class="bar-positive">
+	<div class="buttons buttons-left header-item">
+		<span class="left-buttons"><button class="button button-icon button-clear ion-ios-list-outline"></button></span>
+    </div>
+     <div class="title title-center header-item">Search by Category</div>
+     <div class="buttons buttons-right">
+     	<span class="right-buttons"><button class="button button-icon button-clear ion-ios-close-outline " ng-click="closeModal()"></button></span>
+     </div>
+</ion-header-bar>
+<ion-content>
+<form>
+   <ion-list>
+   <ion-radio ng-click="dashboardFilters()" ng-model="filters.type" ng-repeat="(k, v) in filters.types" ng-value="{{k}}">{{v}}</ion-radio>
+    </ion-list>
+</form>
+</ion-content>
+</ion-modal-view>

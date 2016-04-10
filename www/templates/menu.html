@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive" align-title="center">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+        <div class="logo-container">
+        <a class="logo"><img class="full-image" src="img/logo.png"></a>
+        <p ng-if="user" class="center">
+          Welcome, {{user.user_username}}
+        </p>
+        </div>
+        <ion-list class="sidebar">
+            <ion-item menu-close class="item-icon-left" ui-sref="app.category">
+                <i class="icon ion-ios-list-outline positive"></i>
+                Categories
+            </ion-item>
+            <ion-item menu-close class="item-icon-left" ui-sref="app.register">
+                <i class="icon ion-compose positive"></i>
+                Register
+            </ion-item>
+            <ion-item menu-close class="item-icon-left" ui-sref="app.followus">
+                <i class="icon ion-social-rss-outline positive"></i>
+                Follow us
+            </ion-item>
+            <ion-item menu-close class="item-icon-left" ui-sref="app.profile">
+                <i class="icon ion-person-stalker positive"></i>
+                About us
+            </ion-item>
+            <ion-item ng-if="!user" menu-close class="item-icon-left" ui-sref="app.signin">
+              <i class="icon ion-log-in positive"></i>
+              Signin
+            </ion-item>
+            <ion-item ng-if="user" menu-close class="item-icon-left" ng-click="logout()">
+              <i class="icon ion-log-out positive"></i>
+              Logout
+            </ion-item>
+        </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

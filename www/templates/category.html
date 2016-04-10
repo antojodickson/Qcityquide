@@ -1,0 +1,37 @@
+<ion-view class="cat-page">
+  <ion-nav-bar class="bar-positive category" align-title="center">
+    <ion-nav-title>Categories</ion-nav-title>
+</ion-nav-bar>
+<ion-nav-buttons side="left">
+  <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+<ion-nav-buttons side="right">
+  <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+</ion-nav-buttons>
+    <ion-content>
+      <!-- <video autoplay loop poster="" id="bgvid" ng-show="loading">
+        <source src="img/QCITYGUIDE INTRO_1.mp4" type="video/mp4">
+        </video> -->
+        <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="getItems(true)">
+        </ion-refresher>
+        <!-- <div ng-show="loading" class="center padding"><ion-spinner icon="android"></ion-spinner></div> -->
+        <div class="row" ng-hide="loading">
+          <div class="col center">
+            <img class="full-image" src="img/logo.png" alt="" />
+          </div>
+        </div>
+        <div class="col-33 grid-list" ng-repeat="(k, cate) in categories | orderBy:['order']">
+          <a class="item item-image gl-wrapper" ng-click="categorySelected(cate)" href="">
+            <img ng-src="{{cate.img}}">
+            <span class="cate-title">{{cate.name}}</span>
+          </a>
+        </div>
+        <div class="row" ng-if="!loading && !categories.length">
+          <div class="col padding">
+            <p>
+              No Categories Found
+            </p>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="">
+    <ion-content scroll="false" overflow-scroll="false">
+        <div id="introduction" class="introduction">
+            <ion-slide-box ng-init="disableSwipe()">
+                <ion-slide>
+                    <div id="intro-bg" class="intro-bg">
+                        <div class="intro-bg-wrapper">
+                            <div class="info">
+                                <div class="row">
+                                    <div class="col col-80 col-offset-10">
+                                        <div class="logo">
+                                         <span>QATAR</span>
+                                        </div>
+                                        <p>Explore the city to find the best.</p>
+                                    </div>
+                                </div>
+                                <button ng-click="start()" class="button-get-started button button-outline button-light">
+                                    Get Started
+                                </button>
+                                <div ng-show="loading" class="get-started-loading padding"><ion-spinner icon="android"></ion-spinner></div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+</ion-view>
